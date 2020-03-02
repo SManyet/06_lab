@@ -9,7 +9,7 @@ template <class T>
 class Queue {
 
     private:
-        T *queueArray[100]; //
+        T *queueArray;
         int queueSize;
         int front;
         int back;
@@ -23,12 +23,11 @@ class Queue {
 
     // Queue operations
     void enqueue(T);
-    void dequeue(T &); //TODO: why is this a variable reference?
+    T dequeue(); //TODO: why is this a variable reference?
     bool isEmpty() const;
     bool isFull() const;
     void clear();
 
 
 };
-
 #endif

@@ -1,16 +1,10 @@
 #include <iostream>
 #include <fstream>
+
+#include "Stack.h"
+#include "Queue.h"
+
 using namespace std;
-
-// struct for book to be stored in catalog
-struct Book {
-    string title;
-    string author;
-    int wordCount;
-    int lineCount;
-    double letterFrq[26];
-
-};
 
 // func for processing each char in book contents
 bool processChar(char letter, Book &book, bool prevCRLF) {
@@ -38,7 +32,7 @@ int main() {
         fstream bookFile; //book txt file stream
         string path;
         cout << "Input file path: " << endl;
-        cin >> path;
+        getline(cin, path);
         
         bookFile.open(path, ios::in); // open the txt file 
         if (bookFile.fail()) { // checks if file exists
@@ -49,8 +43,7 @@ int main() {
         }
         cout << "processing " << path << endl;
 
-        Book book = {"", "", 0, 0}; // make default book struct
-
+        Queue q = Queue()
         getline(bookFile, book.title); // first line is always title
         getline(bookFile, book.author); // second line is always author full name
 

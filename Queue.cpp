@@ -23,13 +23,14 @@ void Queue<T>::enqueue(T item) {
 }
 
 template <class T>
-void Queue<T>::dequeue(T &item) { //TODO: why is this a variable reference?
+T Queue<T>::dequeue() { 
     if (isEmpty())
         throw StackUnderflow();
     else {
         front = (front + 1) % queueSize;
-        item = queueArray[front];
+        T temp = queueArray[front];
         numItems--;
+        return temp;
     }
 }
 
@@ -62,4 +63,3 @@ void Queue<T>::clear() {
     back = queueSize - 1;
     numItems = 0;
 }
-
