@@ -6,13 +6,23 @@ Stack<T>::Stack(int s) {
 }
 
 template <class T>
-void Stack<T>::push(const T*) {
-    
+void Stack<T>::push(const T* newNode) {
+    int i = length();
+    if (i >= size) {
+        throw StackOverflow();
+    } else {
+        stack[i] = newNode;
+    } 
 }
 
 template <class T>
 T* Stack<T>::pop() {
+    if (stack[0] == nullptr) {
+        throw StackUnderflow();
+    }
     T *temp = top();
+    delete stack[length() - 1];
+    return temp;
 }
 
 template <class T>
