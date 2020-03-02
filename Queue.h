@@ -4,12 +4,12 @@
 #include <iostream>
 using namespace std;
 
-//Stack template
+//Queue template
 template <class T>
 class Queue {
 
     private:
-        T *queueArray[100]; //TODO: Change this to an array of pointers
+        T *queueArray[100]; //
         int queueSize;
         int front;
         int back;
@@ -17,7 +17,7 @@ class Queue {
 
     public:
     //constructor
-    Queue(int); //TODO: is this supposed to be an int?
+    Queue(int); //
     class StackOverflow;
     class StackUnderflow;
 
