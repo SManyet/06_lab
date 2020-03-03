@@ -2,7 +2,6 @@
 #define QUEUE_H
 
 #include <iostream>
-using namespace std;
 
 //Queue template
 template <class T>

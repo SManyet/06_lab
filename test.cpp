@@ -1,11 +1,13 @@
-#include "Queue.h"
+#include "Queue_test.cpp"
+
+#include <iostream>
 
 int main() {
-    Queue<int*> q(30);
-    int *first = new int(5);
+    Queue<int> q(30);
+    int first = 5;
     q.enqueue(first);
     int *returned = q.dequeue();
-    std::cout << returned << endl;
+    std::cout << returned << std::endl;
 
     return 0;
 }
