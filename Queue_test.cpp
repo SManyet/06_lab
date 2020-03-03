@@ -44,24 +44,11 @@ class Queue {
 
 
         bool isEmpty() {
-            bool status;
-
-            if(numItems == 0)
-                status = false;
-            else
-                status = true;
-
-            return status;
+            return (numItems == 0);
         }
 
         bool isFull() {
-            bool status;
-
-            if (numItems < queueSize)
-                status = false;
-            else status = true;
-
-            return status;
+            return (numItems >= queueSize);
         }
 
         void clear() {

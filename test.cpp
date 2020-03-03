@@ -7,7 +7,7 @@ int main() {
     int first = 5;
     q.enqueue(first);
     int *returned = q.dequeue();
-    std::cout << returned << std::endl;
+    std::cout << *returned << std::endl;
 
     return 0;
 }
