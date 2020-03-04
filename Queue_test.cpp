@@ -21,12 +21,12 @@ class Queue {
         class StackUnderflow{};
         class StackOverflow{};
 
-        void enqueue(T &item) {
+        void enqueue(T *item) {
             if (isFull())
                 throw StackOverflow();
             else {
                 back = (back + 1) % queueSize;
-                queueArray[back] = &item;
+                queueArray[back] = item;
                 numItems++;
             }
         }
@@ -55,6 +55,10 @@ class Queue {
             front = queueSize - 1;
             back = queueSize - 1;
             numItems = 0;
+        }
+        
+        int getNumItems() {
+            return numItems;
         }
 };
 #endif

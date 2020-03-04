@@ -1,0 +1,13 @@
+Linked List
+- dynamic (good with insert, remove, grow, shrink)
+- larger memory usage
+- more complex
+- possible memory leaks
+
+List is made of nodes, each node has data and pointer to next node.
+- list only has a pointer to the first item in the list
+- self-referential data structure
+
+
+
+
