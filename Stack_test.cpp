@@ -1,7 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
 #include <iostream>
-
+using namespace std;
 
 template <class T>
 class Stack {
@@ -26,30 +26,23 @@ class Stack {
             if (head >= size) {
                 throw StackOverflow();
             } else {
-                stack[head] = item;
-                std::cout << head << ": "<< stack[head] << std::endl;
                 head++;
+                stack[head] = item;
             }  
         }
         T* pop() {
-            if (stack[0] == nullptr) {
+            if (head == -1) {
                 throw StackUnderflow();
-            } 
-            head--;
+            }
             T *temp = stack[head];
-            std::cout << head << " head is "<< *stack[head] << std::endl;
-            std::cout << "temp is "<< temp << std::endl;
+            head--;
             return temp;
         }
         T* top() {
             return stack[head];
         }
         int length() {
-            int i = 0;
-            while (stack[i] != nullptr) {
-                i++;
-            }
-            return i;
+            return head + 1;
         }
         // void empty();
 };

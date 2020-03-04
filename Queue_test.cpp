@@ -4,14 +4,15 @@
 template <class T>
 class Queue {
     private:
-        T **queueArray;
+        T *queueArray[100];
         int queueSize;
         int front;
         int back;
         int numItems;
+
     public:
         Queue(int size) {
-            queueArray = new T*[size];
+            //queueArray = new T*[size];
             queueSize = size;
             front = -1;
             back = -1;
@@ -35,13 +36,12 @@ class Queue {
             if (isEmpty()) {
                 throw StackUnderflow();
             }
+
             front = (front + 1) % queueSize;
             T *temp = queueArray[front];
             numItems--;
             return temp;
         }
-
-
 
         bool isEmpty() {
             return (numItems == 0);
