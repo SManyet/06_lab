@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <algorithm>
-#include <iterator>
+
 
 
 using namespace std;
@@ -55,7 +54,7 @@ int main() {
         char letter = file.get();
         if (punct.find(letter) == string::npos) {
             cout << "2" << endl;
-            stack.push(letter);
+            stack.push(&letter);
         } else {
             for (int i = 0; i < stack.length(); i++) {
                 cout << "1" << endl;

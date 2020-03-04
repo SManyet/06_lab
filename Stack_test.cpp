@@ -8,25 +8,25 @@ class Stack {
     private: 
         int size;
         int head = 0;
-        T **stack;
+        T *stack[1000];
 
 
     public:
         Stack();
         Stack(int s) {
-            size = s;
-            stack = new T*[s];
+            size = 1000;
+            //stack = new T*[s];
         }
         
         class StackOverflow{};
         class StackUnderflow{};
 
 
-        void push(T item) {
+        void push(T *item) {
             if (head >= size) {
                 throw StackOverflow();
             } else {
-                stack[head] = &item;
+                stack[head] = item;
                 head++;
             }  
         }
