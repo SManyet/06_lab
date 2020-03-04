@@ -23,7 +23,7 @@ int main() {
     bool input = false;
     while (input) {
         cout << "input file path: " << endl;
-        getline(cin, path);
+       getline(cin, path);
 
         file.open(path, ios::in);
         if (file.fail()) {
@@ -36,25 +36,27 @@ int main() {
             input = false;
         }
     }
-    int charCount = 0;
-    while (!file.eof()) {
-        file.get();
-        charCount++;
-    }
-    file.close();
+    // int charCount = 0;
+    // while (!file.eof()) {
+    //     file.get();
+    //     charCount++;
+    // }
+    // file.close();
     file.open(path, ios::in);
 
-    // file.seekg(0, ios::beg);
     cout << "here" << endl;
     // Queue<char> q(charCount);
     int maxWordLength = 100;
     Stack<char> stack(maxWordLength);
     while (!file.eof()) {
         string punct = " .,;:!?";
-        char letter = file.get();
+        char temp = file.get();
+        // char *letter = new char;
+        char *letter = &temp;
         if (punct.find(letter) == string::npos) {
             cout << "2" << endl;
-            stack.push(&letter);
+            cout << letter << endl;
+            stack.push(letter);
         } else {
             for (int i = 0; i < stack.length(); i++) {
                 cout << "1" << endl;

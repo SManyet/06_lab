@@ -7,7 +7,7 @@ template <class T>
 class Stack {
     private: 
         int size;
-        int head = 0;
+        int head = -1;
         T *stack[1000];
 
 
@@ -27,15 +27,18 @@ class Stack {
                 throw StackOverflow();
             } else {
                 stack[head] = item;
+                std::cout << head << ": "<< stack[head] << std::endl;
                 head++;
             }  
         }
         T* pop() {
             if (stack[0] == nullptr) {
                 throw StackUnderflow();
-            }   
-            T *temp = stack[head];
+            } 
             head--;
+            T *temp = stack[head];
+            std::cout << head << " head is "<< *stack[head] << std::endl;
+            std::cout << "temp is "<< temp << std::endl;
             return temp;
         }
         T* top() {
